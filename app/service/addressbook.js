@@ -8,3 +8,5 @@ class AddressBookInfoService {
         })
     }
 }
+
+module.exports = new AddressBookInfoService();
