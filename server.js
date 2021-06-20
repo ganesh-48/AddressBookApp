@@ -19,6 +19,9 @@ app.get('/', (req, res) => {
     res.json({"message": "Welcome to Address Book App application."});
 });
 
+// Require employee payroll routes
+require('./app/routes/addressbookinfo.js')(app);
+
 // listen for requests
 app.listen(7000, () => {
     console.log("Server is listening on port 7000");

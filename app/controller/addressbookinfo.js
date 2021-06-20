@@ -1,10 +1,11 @@
-const addressBookInfoService = require('../service/addressbook.js');
+const addressBookInfoService = require('../service/addressbookinfo.js');
 
 class AddressBookInfo {
 
     create = (req, res) => {
         let newAddressBookInfo = req.body;
         addressBookInfoService.create(newAddressBookInfo, (error, data) => {
+            console.log(newAddressBookInfo);
             if(error) {
                 return res.status(500).send({
                     success: false,
@@ -13,7 +14,7 @@ class AddressBookInfo {
             }
             res.status(200).send({
                 success: true,
-                message: "Data is added successfully in address book info..."
+                message: "Data is added successfully in address book info...",
                 data: data
             })
         })

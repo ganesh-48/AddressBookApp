@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const AddressBookInfoSchema = mongoose.Schema({
+const AddressBookInfoSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: true,
@@ -27,12 +27,12 @@ const AddressBookInfoSchema = mongoose.Schema({
         validation: /^[A-Z]{1}[A-Za-z\\s]{1,}$/
     },
     zipCode: {
-        type: integer,
+        type: Number,
         required: true,
         validation:  /@"^\d{6}$/
     },
     phoneNumber: {
-        type: integer,
+        type: Number,
         required: true,
         validation:  /@"^\d{10}$/
     },
@@ -49,17 +49,17 @@ const AddressBookInfo = mongoose.model('AddressBookInfo', AddressBookInfoSchema)
 
 class AddressBookInfoModel {
 
-    create = (newData, callBack) => {
+    create = (newAddressBookInfo, callBack) => {
         const addressBookInfo = new AddressBookInfo ({
-            firstName: newData.firstName,
-            lastName: newData.lastName,
-            address: newData.address,
-            city: newData.city,
-            state: newData.state,
-            zipCode: newData.zipCode,
-            phoneNumber: newData.phoneNumber,
-            emailId: newData.emailId            
-        }),
+            firstName: newAddressBookInfo.firstName,
+            lastName: newAddressBookInfo.lastName,
+            address: newAddressBookInfo.address,
+            city: newAddressBookInfo.city,
+            state: newAddressBookInfo.state,
+            zipCode: newAddressBookInfo.zipCode,
+            phoneNumber: newAddressBookInfo.phoneNumber,
+            emailId: newAddressBookInfo.emailId            
+        });
         addressBookInfo.save({}, (error, data) => {
             return (error) ? callBack(error, null) : callBack(null, data);
         });
