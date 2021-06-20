@@ -45,4 +45,24 @@ const AddressBookInfoSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('AddressBookInfo', AddressBookInfoSchema);
+const AddressBookInfo = mongoose.model('AddressBookInfo', AddressBookInfoSchema);
+
+class AddressBookInfoModel {
+
+    create = (newData, callBack) => {
+        const addressBookInfo = new AddressBookInfo ({
+            firstName: newData.firstName,
+            lastName: newData.lastName,
+            address: newData.address,
+            city: newData.city,
+            state: newData.state,
+            zipCode: newData.zipCode,
+            phoneNumber: newData.phoneNumber,
+            emailId: newData.emailId            
+        }),
+        addressBookInfo.save({}, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, data);
+        });
+    }
+}
+module.exports = new AddressBookInfoModel();
