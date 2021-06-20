@@ -8,10 +8,10 @@ module.exports = (app) => {
     // Retrieve all addressBookInfo
     app.get('/getalladdressBookInfo', addressBookInfo.findAllAddressBookInfo);
 
-    /*/ Retrieve a single addressBookInfo with addressBookInfoId
-    app.get('/findaddressBookInfo/:addressBookInfoId', addressBookInfo.findOne);
+    // Retrieve a single addressBookInfo with addressBookInfoId
+    app.get('/findaddressBookInfo/:addressBookInfoId', addressBookInfo.findOneAddressBookInfo);
 
-    // Update a addressBookInfo with addressBookInfoId
+    /*/ Update a addressBookInfo with addressBookInfoId
     app.put('/update/addressBookInfo/:addressBookInfoId', addressBookInfo.update);
 
     // Delete a addressBookInfo with addressBookInfoId

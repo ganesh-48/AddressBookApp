@@ -77,5 +77,16 @@ class AddressBookInfoModel {
             return (error) ? callBack(error, null) : callBack(null, data);
         });
     }
+
+    /**@Description  retrive the address book info of one user find by using addressBookInfoId 
+     * @param {*} addressBookInfoId 
+     * @param {*} callBack is used to callback the service
+     */
+    findaddressBookInfoId = (addressBookInfoId, callBack) => {
+        AddressBookInfo.findById(addressBookInfoId, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, error);
+        })
+    }
+    
 }
 module.exports = new AddressBookInfoModel();

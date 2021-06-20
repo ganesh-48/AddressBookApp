@@ -43,6 +43,29 @@ class AddressBookInfo {
             })
         })
     }
+
+    /**
+     * @Description find one address book info by using address book info Id
+     * @param {*} req send from http 
+     * @param {*} res is used to send res
+     */
+    findOneAddressBookInfo = (req, res) => {
+        let addressBookInfoId = req.params.addressBookInfoId;
+        addressBookInfoService.findaddressBookInfoId(addressBookInfoId, (error, data) => {
+            if(error) {
+                return res.status(404).send ({
+                    success: false,
+                    message: "Some error is occurred address book info not found"
+                })
+            }
+            res.status(200).send ({
+                success: true,
+                message: "Address book info was found by id",
+                data: data
+            })
+        })
+    }
+
 }
 
 module.exports = new AddressBookInfo();

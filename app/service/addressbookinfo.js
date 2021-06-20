@@ -20,6 +20,17 @@ class AddressBookInfoService {
             return (error) ? callBack(error, null) : callBack(null, data);
         })
     }
+
+    /**
+     * @Description retrive the address book info 
+     * @param {*} addressBookInfoId 
+     * @param {*} callBack  is used to callback the controller 
+     */
+    findaddressBookInfoId = (addressBookInfoId, callBack) => {
+        addressBookInfoModel.findaddressBookInfoId(addressBookInfoId, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, data);
+        })
+    }
 }
 
 module.exports = new AddressBookInfoService();
