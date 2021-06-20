@@ -88,5 +88,25 @@ class AddressBookInfoModel {
         })
     }
     
+    /**
+     * @description Update the address book info by using a address book info id
+     * @param newAddressBookInfo NewAddressBookInfo
+     * @return callback is used to callback Service
+     */
+    findAddressBookInfoIdAndUpdate = (newAddressBookInfo, addressBookInfoId, callBack) => {
+        AddressBookInfo.findByIdAndUpdate(addressBookInfoId, {
+            firstName: newAddressBookInfo.firstName,
+            lastName: newAddressBookInfo.lastName,
+            address: newAddressBookInfo.address,
+            city: newAddressBookInfo.city,
+            state: newAddressBookInfo.state,
+            zipCode: newAddressBookInfo.zipCode,
+            phoneNumber: newAddressBookInfo.phoneNumber,
+            emailId: newAddressBookInfo.emailId
+        }, {new: true}, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, data);
+        })
+    }
+
 }
 module.exports = new AddressBookInfoModel();

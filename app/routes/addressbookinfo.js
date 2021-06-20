@@ -11,10 +11,10 @@ module.exports = (app) => {
     // Retrieve a single addressBookInfo with addressBookInfoId
     app.get('/findaddressBookInfo/:addressBookInfoId', addressBookInfo.findOneAddressBookInfo);
 
-    /*/ Update a addressBookInfo with addressBookInfoId
-    app.put('/update/addressBookInfo/:addressBookInfoId', addressBookInfo.update);
+    // Update a addressBookInfo with addressBookInfoId
+    app.put('/update/addressBookInfo/:addressBookInfoId', addressBookInfo.updateAddressBookInfo);
 
-    // Delete a addressBookInfo with addressBookInfoId
+    /*/ Delete a addressBookInfo with addressBookInfoId
     app.delete('/delete/addressBookInfo/:addressBookInfoId', addressBookInfo.delete);
     */
 }

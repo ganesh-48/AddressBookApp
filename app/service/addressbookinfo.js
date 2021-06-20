@@ -31,6 +31,17 @@ class AddressBookInfoService {
             return (error) ? callBack(error, null) : callBack(null, data);
         })
     }
+
+    /**
+   * @description find address book info by Id and update the addressbookinfo
+   * @param newAddressBookInfo is data sent from Controller
+   * @return callback is used to callback Controller
+   */
+    findAddressBookInfoIdAndUpdate = (newAddressBookInfo, addressBookInfoId, callBack) => {
+        addressBookInfoModel.findAddressBookInfoIdAndUpdate(newAddressBookInfo, addressBookInfoId, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, data);
+        })
+    }
 }
 
 module.exports = new AddressBookInfoService();

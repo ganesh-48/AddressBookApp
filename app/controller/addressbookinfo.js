@@ -66,6 +66,28 @@ class AddressBookInfo {
         })
     }
 
+    /**
+     * @description Update the address book info by using a addressbookinfoid
+     * @param addressBookInfoId, NewData
+     * @return callback is used to callback Service
+     */
+    updateAddressBookInfo = (req, res) => {
+        let  addressBookInfoId = req.params.addressBookInfoId;
+        addressBookInfoService.findAddressBookInfoIdAndUpdate(req.body, addressBookInfoId, (error, data) => {
+            if(error) {
+                return res.status(404).send ({
+                    success: false,
+                    message: "Some error is occurred address book info Id was wrong"
+                })
+            }
+            res.status(200).send ({
+                success: true,
+                message: "Address book info updated  successfully",
+                data: data
+            })
+        })
+    }
+
 }
 
 module.exports = new AddressBookInfo();
