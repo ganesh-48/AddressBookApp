@@ -2,6 +2,10 @@ const addressBookInfoService = require('../service/addressbookinfo.js');
 
 class AddressBookInfo {
 
+     /*@Description create and save the address book info
+     * @param {*} req send from http 
+     * @param {*} res is used to send res
+     */
     create = (req, res) => {
         let newAddressBookInfo = req.body;
         addressBookInfoService.create(newAddressBookInfo, (error, data) => {
@@ -20,6 +24,10 @@ class AddressBookInfo {
         })
     }
 
+     /*@Description find all the address book info
+     * @param {*} req send from http 
+     * @param {*} res is used to send res
+     */
     findAllAddressBookInfo = (req, res) => {
         addressBookInfoService.findAllAddressBookInfo((error, data) => {
             if (error) {

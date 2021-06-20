@@ -49,6 +49,10 @@ const AddressBookInfo = mongoose.model('AddressBookInfo', AddressBookInfoSchema)
 
 class AddressBookInfoModel {
 
+    /**@Description create method to save address book info
+     * @param {*} newAddressBookInfo is send to service
+     * @param {*} callBack is used to callback service
+     */
     create = (newAddressBookInfo, callBack) => {
         const addressBookInfo = new AddressBookInfo ({
             firstName: newAddressBookInfo.firstName,
@@ -65,6 +69,9 @@ class AddressBookInfoModel {
         });
     }
 
+    /**@Description Retrive all the address book info from mongoDB
+     * @return callback is used to callback the services
+     */
     findAllAddressBookInfo = (callBack) => {
         AddressBookInfo.find({}, (error, data) => {
             return (error) ? callBack(error, null) : callBack(null, data);
