@@ -1,12 +1,12 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 module.exports = () => {
-    const url = 'mongodb://localhost:27017/addressBookInfo';
 
     mongoose.Promise = global.Promise;
 
     // Connecting to the database
-    mongoose.connect(url, {
+    mongoose.connect(process.env.URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => {
