@@ -108,6 +108,10 @@ class AddressBookInfoModel {
         })
     }
 
+    /**
+        * @description delete the address book info using a address book info id from MongoDB
+        * @return callback is used to callback service file     
+    */
     findAddressBookInfoIdAndRemove = (addressBookInfoId, callBack) => {
         AddressBookInfo.findByIdAndRemove(addressBookInfoId, (error, data) => {
             return (error) ? callBack(error, null) : callBack(null, data);

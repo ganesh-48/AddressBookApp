@@ -43,6 +43,10 @@ class AddressBookInfoService {
         })
     }
 
+      /**
+   * @description delete address book info using address book info id
+   * @return callback is used to callback Controller
+   */
     findAddressBookInfoIdAndRemove = (addressBookInfoId, callBack) => {
         addressBookInfoModel.findAddressBookInfoIdAndRemove(addressBookInfoId, (error, data) => {
             return (error) ? callBack(error, null) : callBack(null, data);

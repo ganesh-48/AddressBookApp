@@ -79,8 +79,8 @@ class AddressBookInfo {
 
     /**
      * @description Update the address book info by using a addressbookinfoid
-     * @param addressBookInfoId, NewData
-     * @return callback is used to callback Service
+    * @param req is request sent from http
+      * @param res is used to send the response
      */
     updateAddressBookInfo = (req, res) => {
         let  addressBookInfoId = req.params.addressBookInfoId;
@@ -99,6 +99,11 @@ class AddressBookInfo {
         })
     }
 
+     /**
+     * @description Delete the address book info by using a addressbookinfoid
+     * @param req is request sent from http
+     * @param res is used to send the response
+     */
     deleteAddressBookInfo = (req, res) => {
         let addressBookInfoId = req.params.addressBookInfoId;
         addressBookInfoService.findAddressBookInfoIdAndRemove(addressBookInfoId, (error, data) => {
