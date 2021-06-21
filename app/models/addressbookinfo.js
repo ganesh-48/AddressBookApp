@@ -108,5 +108,11 @@ class AddressBookInfoModel {
         })
     }
 
+    findAddressBookInfoIdAndRemove = (addressBookInfoId, callBack) => {
+        AddressBookInfo.findByIdAndRemove(addressBookInfoId, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, data);
+        })
+    }
+
 }
 module.exports = new AddressBookInfoModel();

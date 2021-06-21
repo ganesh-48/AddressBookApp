@@ -1,4 +1,5 @@
 const addressBookInfoService = require('../service/addressbookinfo.js');
+const  data = require('../middleware/validation.js');
 
 class AddressBookInfo {
 
@@ -10,9 +11,10 @@ class AddressBookInfo {
 
         var result = data.validate(req.body);
         if(result.error) {
+            console.log(result);
             return res.status(400).send({
                 success: false,
-                message: result.details[0].message
+                message: result.error.details[0].message
             });
         } 
 
@@ -92,6 +94,23 @@ class AddressBookInfo {
             res.status(200).send ({
                 success: true,
                 message: "Address book info updated  successfully",
+                data: data
+            })
+        })
+    }
+
+    deleteAddressBookInfo = (req, res) => {
+        let addressBookInfoId = req.params.addressBookInfoId;
+        addressBookInfoService.findAddressBookInfoIdAndRemove(addressBookInfoId, (error, data) => {
+            if(error) {
+                return res.status(404).send({
+                    success: false,
+                    message: "Some error is occurred address book info Id was wrong"
+                })
+            }
+            res.status(200).send({
+                success: true,
+                message: "Address book info deleted  successfully",
                 data: data
             })
         })

@@ -10,4 +10,4 @@ const data = joi.object({
     emailId: joi.string().email().required()
 });
 
-module.exports = {data};
+module.exports = data

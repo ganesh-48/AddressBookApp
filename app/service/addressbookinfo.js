@@ -42,6 +42,12 @@ class AddressBookInfoService {
             return (error) ? callBack(error, null) : callBack(null, data);
         })
     }
+
+    findAddressBookInfoIdAndRemove = (addressBookInfoId, callBack) => {
+        addressBookInfoModel.findAddressBookInfoIdAndRemove(addressBookInfoId, (error, data) => {
+            return (error) ? callBack(error, null) : callBack(null, data);
+        })
+    }
 }
 
 module.exports = new AddressBookInfoService();

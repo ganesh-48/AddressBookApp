@@ -14,7 +14,6 @@ module.exports = (app) => {
     // Update a addressBookInfo with addressBookInfoId
     app.put('/update/addressBookInfo/:addressBookInfoId', addressBookInfo.updateAddressBookInfo);
 
-    /*/ Delete a addressBookInfo with addressBookInfoId
-    app.delete('/delete/addressBookInfo/:addressBookInfoId', addressBookInfo.delete);
-    */
+    // Delete a addressBookInfo with addressBookInfoId
+    app.delete('/delete/addressBookInfo/:addressBookInfoId', addressBookInfo.deleteAddressBookInfo);
 }
