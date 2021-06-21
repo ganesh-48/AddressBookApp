@@ -8,7 +8,9 @@ module.exports = () => {
     // Connecting to the database
     mongoose.connect(process.env.URL, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify:false,
+        useCreateIndex:true
     }).then(() => {
         console.log("Successfully connected to the database");    
     }).catch(err => {
