@@ -16,4 +16,5 @@ module.exports = (app) => {
 
     // Delete a addressBookInfo with addressBookInfoId
     app.delete('/delete/addressBookInfo/:addressBookInfoId', addressBookInfo.deleteAddressBookInfo);
+
 }
