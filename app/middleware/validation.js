@@ -8,4 +8,6 @@ const data = joi.object({
     phoneNumber: joi.number().min(1000000000).max(9999999999),
     zipCode: joi.number().min(100000).max(999999),
     emailId: joi.string().email().required()
-})
+});
+
+module.exports = {data};

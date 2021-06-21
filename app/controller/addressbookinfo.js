@@ -2,11 +2,20 @@ const addressBookInfoService = require('../service/addressbookinfo.js');
 
 class AddressBookInfo {
 
-     /*@Description create and save the address book info
+     /*@Description create and save the address book info after validation
      * @param {*} req send from http 
      * @param {*} res is used to send res
      */
     create = (req, res) => {
+
+        var result = data.validate(req.body);
+        if(result.error) {
+            return res.status(400).send({
+                success: false,
+                message: result.details[0].message
+            });
+        } 
+
         let newAddressBookInfo = req.body;
         addressBookInfoService.create(newAddressBookInfo, (error, data) => {
             console.log(newAddressBookInfo);
