@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const dbConfig = require('./config/database.js');
-
+const logger = require('./config/logger.js')
 // create express app
 const app = express();
 
@@ -23,6 +23,6 @@ app.get('/', (req, res) => {
 require('./app/routes/addressbookinfo.js')(app);
 
 // listen for requests
-app.listen(7000, () => {
-    console.log("Server is listening on port 7000");
+module.exports=app.listen(7000, () => {
+    logger.info("Server is listening on port 7000");
 });
