@@ -39,6 +39,12 @@ class UserInfoModel {
             return (error) ? callback(error, null) : callback(null, userData);
         })
     }
+
+    checkLogin = (userLoginInfo, callback) => {
+        UserInfo.findOne(userLoginInfo, (error, userData) => {
+            return (error) ? callback(error, null) : callback(null, userData);
+        })
+    }
 }
 
 module.exports = new UserInfoModel();

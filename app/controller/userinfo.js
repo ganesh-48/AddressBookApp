@@ -28,6 +28,24 @@ class UserInfo {
             })
         })
     }
+
+    login = (req, res) => {
+        let userLoginInfo = req.body;
+        userInfoService.checkLogin(userLoginInfo, (error, userData) => {
+            if(error) {
+                return res.status(404).send ({
+                    success: false,
+                    message: "Login details wrong"
+                })
+            }
+            res.status(200).send({
+                success: true,
+                message: "User Login Successfully..",
+                token:  userData
+            })
+        })
+    }
+
 }
 
 module.exports = new UserInfo();

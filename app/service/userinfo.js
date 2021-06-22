@@ -7,6 +7,12 @@ class UserInfoService {
             return (error) ? callBack(error, null) : callBack(null, userData);
         })
     }
+
+    checkLogin = (userLoginInfo, callBack) => {
+        userInfoModel.checkLogin(userLoginInfo, (error, userData) => {
+            return (error) ? callBack(error, null) : callBack(null, userData);
+        })
+    }
 }
 
 module.exports = new UserInfoService();
