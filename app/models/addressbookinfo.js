@@ -84,7 +84,7 @@ class AddressBookInfoModel {
      */
     findaddressBookInfoId = (addressBookInfoId, callBack) => {
         AddressBookInfo.findById(addressBookInfoId, (error, data) => {
-            return (error) ? callBack(error, null) : callBack(null, error);
+            return (error) ? callBack(error, null) : callBack(null, data);
         })
     }
     

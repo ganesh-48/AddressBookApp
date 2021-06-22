@@ -31,6 +31,15 @@ class UserInfo {
 
     login = (req, res) => {
         let userLoginInfo = req.body;
+        var userLoginInfoValidation = data.joiuserInfo.validate(userLoginInfo);
+        if(userLoginInfoValidation.error) {
+            console.log(result);
+            return res.status(400).send({
+                success: false,
+                message: userLoginInfoValidation.error.details[0].message
+            });
+        }
+
         userInfoService.checkLogin(userLoginInfo, (error, userData) => {
             if(error) {
                 return res.status(404).send ({
