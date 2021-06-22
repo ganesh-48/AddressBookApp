@@ -1,4 +1,5 @@
 const addressBookInfo = require('../controller/addressbookinfo.js');
+const userInfo = require('../controller/userinfo.js');
 
 module.exports = (app) => {
     
@@ -17,4 +18,6 @@ module.exports = (app) => {
     // Delete a addressBookInfo with addressBookInfoId
     app.delete('/delete/addressBookInfo/:addressBookInfoId', addressBookInfo.deleteAddressBookInfo);
 
+    // Create a new addressBookInfo user
+    app.post('/add/userinfo', userInfo.create);
 }

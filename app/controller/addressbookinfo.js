@@ -1,5 +1,5 @@
 const addressBookInfoService = require('../service/addressbookinfo.js');
-const  data = require('../middleware/validation.js');
+const  validator = require('../middleware/validation.js');
 
 class AddressBookInfo {
 
@@ -9,7 +9,7 @@ class AddressBookInfo {
      */
     create = (req, res) => {
 
-        var result = data.validate(req.body);
+        var result = validator.joiAddressBookInfo.validate(req.body);
         if(result.error) {
             console.log(result);
             return res.status(400).send({

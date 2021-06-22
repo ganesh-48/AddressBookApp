@@ -21,7 +21,24 @@ const UserInfoSchema = mongoose.Schema ({
         required: true,
     }
 }, {
-    timestamps: true;
+    timestamps: true
 });
 
-module.exports = new UserInfoSchema
+const UserInfo = mongoose.model('User Info', UserInfoSchema);
+
+class UserInfoModel {
+
+    create = (newUserInfo, callback) => {
+        const userInfo = new UserInfo({
+            firstName: newUserInfo.firstName,
+            lastName: newUserInfo.lastName,
+            emailId: newUserInfo.emailId,
+            password: newUserInfo.password
+        });
+        userInfo.save({}, (error, userData) => {
+            return (error) ? callback(error, null) : callback(null, userData);
+        })
+    }
+}
+
+module.exports = new UserInfoModel();
