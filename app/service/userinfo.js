@@ -14,18 +14,18 @@ class UserInfoService {
         })
     }
 
-    checkLogin = (userLoginInfo, callBack) => {
+    checkLogin = (userLoginInfo, callback) => {
         userInfoModel.checkLogin(userLoginInfo, (error, userData) => {
-            let result = null;
+            let userResult = null;
             if (error) {
-                return callBack(error, null);
+                return callback(error, null);
             }
-            else if (result = bcrypt.compareSync(userLoginInfo.password, userData.password)) {
+            else if (userResult = bcrypt.compareSync(userLoginInfo.password, userData.password)) {
                 userData.password = undefined;
-                const jsontoken = sign({ result: userData }, process.env.jwt, { expiresIn: "2h" });
-                return callBack(null, jsontoken);
+                const jsontoken = sign({ userResult: userData }, process.env.jwt, { expiresIn: "2h" });
+                return callback(null, jsontoken);
             }
-            return callBack("Invalid userlogindata", null);
+            return callback("Invalid userlogindata", null);
         })
     }
 }
