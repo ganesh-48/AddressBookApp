@@ -41,8 +41,11 @@ class UserInfoModel {
     }
 
     checkLogin = (userLoginInfo, callback) => {
-        UserInfo.findOne(userLoginInfo, (error, userData) => {
-            return (error) ? callback(error, null) : callback(null, userData);
+        UserInfo.findOne({ "emailId": userLoginInfo.emailId }, (error, userData) => {
+            if (error) {
+                return callback(error, null);
+            }
+            return (!userData) ? callback("user doesn't exist", null) : callback(null, userData);
         })
     }
 }
