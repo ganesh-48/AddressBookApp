@@ -183,3 +183,20 @@ describe("/GET /findaddressBookInfo/Id", () => {
             });
     });
 });
+
+describe("/PUT /update/addressBookInfo/Id", () => {
+    it("givenValidTokenAndFindAddressBookInfoById_whenUpdateUsingId_shouldReturnStatus=200AndSuccess=true", done => {
+        chai
+            .request(server)
+            .put("/update/addressBookInfo/" + addressBookInfo.AddressBookInfoId.Id)
+            .send(addressBookInfo.UpdatedAddressBookInfo)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eq(true)
+                res.body.should.have.property('message').eq("Address book info updated  successfully")
+                res.body.should.have.property('data')
+            done();
+            });
+    });
+});
