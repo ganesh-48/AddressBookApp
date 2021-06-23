@@ -152,3 +152,20 @@ describe("/GET /getalladdressBookInfo", () => {
             });
     });
 });
+
+describe("/GET /findaddressBookInfo/Id", () => {
+
+    it("givenAddressBookInfoCheckingByToken_WhenGetOneAddressBookInfoById_shouldReturnStatus=200AndSuccess=true", done => {
+        chai
+            .request(server)
+            .get("/findaddressBookInfo/" + addressBookInfo.AddressBookInfoId.Id)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eq(true)
+                res.body.should.have.property('message').eq("Address book info was found by id")
+                res.body.should.have.property('data')
+            done();
+            });
+    });
+});
