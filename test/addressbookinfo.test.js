@@ -200,3 +200,19 @@ describe("/PUT /update/addressBookInfo/Id", () => {
             });
     });
 });
+
+describe("/delete/addressBookInfo/Id", () => {
+
+    it("givenValidTokenAndEmployeeData_whenDeleteUsingId_shouldReturnStatus=200AndSuccess=true", done => {
+        chai
+            .request(server)
+            .delete("/delete/addressBookInfo/" + addressBookInfo.AddressBookInfoId.Id)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eq(true);
+                res.body.should.have.property('message').eq("Address book info deleted  successfully")
+                done();
+            });
+    });
+});

@@ -88,7 +88,7 @@ class AddressBookInfo {
             if(error) {
                 return res.status(404).send ({
                     success: false,
-                    message: "Some error is occurred address book info Id was wrong"
+                    message: "Some error is occurred when update the address book info by Id"
                 })
             }
             res.status(200).send ({
@@ -108,7 +108,7 @@ class AddressBookInfo {
         let addressBookInfoId = req.params.addressBookInfoId;
         addressBookInfoService.findAddressBookInfoIdAndRemove(addressBookInfoId, (error, data) => {
             if(error) {
-                return res.status(404).send({
+                return res.status(400).send({
                     success: false,
                     message: "Some error is occurred address book info Id was wrong"
                 })
