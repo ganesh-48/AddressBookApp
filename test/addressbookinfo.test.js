@@ -168,4 +168,18 @@ describe("/GET /findaddressBookInfo/Id", () => {
             done();
             });
     });
+
+    it("givenValidTokenAndInvalidAdderssBookInfoId_whenFindById_shouldReturnStatus=404AndSuccess=false", done => {
+
+        chai
+            .request(server)
+            .get("/findaddressBookInfo/" + addressBookInfo.AddressBookInfoInvalidId.Id)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(404);
+                res.body.should.have.property('success').eq(false)
+                res.body.should.have.property('message').eq("Some error is occurred address book info not found")
+            done();
+            });
+    });
 });
