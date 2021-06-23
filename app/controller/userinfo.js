@@ -1,12 +1,13 @@
 const userInfoService = require('../service/userinfo.js');
 const data = require('../middleware/validation.js'); 
+const userValidation = require('../middleware/userValidation.js');
 
 class UserInfo {
     create = (req, res) => {
 
         var userResult = data.joiuserInfo.validate(req.body);
         if(userResult.error) {
-            console.log(result);
+            console.log(userResult);
             return res.status(400).send({
                 success: false,
                 message: userResult.error.details[0].message
@@ -30,8 +31,9 @@ class UserInfo {
     }
 
     login = (req, res) => {
+
         let userLoginInfo = req.body;
-        var userLoginInfoValidation = data.joiuserInfo.validate(userLoginInfo);
+        var userLoginInfoValidation = userValidation.joiuserInfo.validate(userLoginInfo);
         if(userLoginInfoValidation.error) {
             console.log(result);
             return res.status(400).send({
@@ -39,7 +41,7 @@ class UserInfo {
                 message: userLoginInfoValidation.error.details[0].message
             });
         }
-
+   
         userInfoService.checkLogin(userLoginInfo, (error, userData) => {
             if(error) {
                 return res.status(404).send ({
