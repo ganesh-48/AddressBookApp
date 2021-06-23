@@ -16,5 +16,10 @@
     {
         "emailId": "Sunder@gmail.com", 
         "password": "Sunder@2552"
+    },
+    "WrongUserLoginInfo":
+    {
+        "emailId": "Sunder@gmail.com", 
+        "password": "Sunder@25"
     }
 }

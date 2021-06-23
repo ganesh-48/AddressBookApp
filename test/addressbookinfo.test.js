@@ -50,4 +50,17 @@ describe('POST/userlogin', () => {
             done();
             });
     });
+
+    it('givenInvalidAddressBookInfo_whenUserLogin_shouldReturnStatus404AndSuccess=false', (done) => {
+        const userInfo = addressBookInfo.WrongUserLoginInfo;
+        chai.request(server)
+            .post('/userlogin')
+            .send(userInfo)
+            .end((error, res) => {
+                res.should.have.status(404);
+                res.body.should.have.property('success').eq(false)
+                res.body.should.have.property('message').eq('Login details wrong')
+            done();
+            });
+    });
 });
