@@ -79,9 +79,6 @@ beforeEach(done => {
         });
 });
 
-//let invalidtoken = jw.slice(10);
-//let wrongToken = "";
-
 describe('POST/add', () => {
     it('givenAddNewAddressBookInfoCheckingByToken_WhenAdded_shouldReturnStatus=200AndSuccess=true', (done) => {
         const userInfo = addressBookInfo.NewAddressBookInfo;
@@ -111,3 +108,37 @@ describe('POST/add', () => {
             });
     });
 });
+
+describe("/GET /getalladdressBookInfo", () => {
+
+    it("givenAddNewAddressBookInfoCheckingByToken_WhenGetAllTheAddressBookInfo_shouldReturnStatus=200AndSuccess=true", done => {
+        chai
+            .request(server)
+            .get("/getalladdressBookInfo")
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eq(true)
+                res.body.should.have.property('message').eq("Retrived all the address book info")
+                res.body.should.have.property('data')
+                done();
+            });
+    });
+});
+/*
+describe('GET /getalladdressBookInfo', () => {
+    it('givenAddNewAddressBookInfoCheckingByToken_WhenGetAllTheAddressBookInfo_shouldReturnStatus=200AndSuccess=true', (done) => {
+        //const userInfo = addressBookInfo.NewAddressBookInfo;
+        chai.request(server)
+            .post('/getalladdressBookInfo')
+            //.send(addressBookInfo.NewAddressBookInfo)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eq(true)
+                res.body.should.have.property('message').eq('Retrived all the address book info')
+                res.body.should.have.property('data')
+            done();
+            });
+    });
+});*/
