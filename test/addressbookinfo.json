@@ -11,5 +11,10 @@
         "firstName": "Sai", 
         "lastName": "Sunder", 
         "emailId": "Sunder@gmail.com"
+    },
+    "UserLoginInfo":
+    {
+        "emailId": "Sunder@gmail.com", 
+        "password": "Sunder@2552"
     }
 }
