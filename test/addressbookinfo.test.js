@@ -215,4 +215,17 @@ describe("/delete/addressBookInfo/Id", () => {
                 done();
             });
     });
+
+    it("givenValidTokenAndAddressBookInfo_whenDeleteUsingId_shouldReturnStatus=400AndSuccess=true", done => {
+        chai
+            .request(server)
+            .delete("/delete/addressBookInfo/" + addressBookInfo.AddressBookInfoInvalidId.Id)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(400);
+                res.body.should.have.property('success').eq(false);
+                res.body.should.have.property('message').eq("Some error is occurred address book info Id was wrong")
+                done();
+            });
+    });
 });
