@@ -64,3 +64,33 @@ describe('POST/userlogin', () => {
             });
     });
 });
+
+let token = '';
+console.log(token);
+beforeEach(done => {
+    chai
+        .request(server)
+        .post("/userlogin")
+        .send(addressBookInfo.UserLoginInfo)
+        .end((error, res) => {
+            token = res.body.token;
+            res.should.have.status(200);
+            done();
+        });
+});
+
+describe('POST/add', () => {
+    it('givenAddNewAddressBookInfo_WhenAdded_shouldReturnStatus=200AndSuccess=true', (done) => {
+        const userInfo = addressBookInfo.NewAddressBookInfo;
+        chai.request(server)
+            .post('/add')
+            .send(addressBookInfo.NewAddressBookInfo)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(200);
+                res.body.should.have.property('success').eq(true)
+                res.body.should.have.property('message').eq('Data is added successfully in address book info...')
+            done();
+            });
+    });
+});

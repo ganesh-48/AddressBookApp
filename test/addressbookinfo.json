@@ -21,5 +21,16 @@
     {
         "emailId": "Sunder@gmail.com", 
         "password": "Sunder@25"
+    },
+    "NewAddressBookInfo":
+    {
+        "firstName": "Sai",
+        "lastName": "Sunder",
+        "address": "SaiNiwas",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "zipCode": "413101",
+        "phoneNumber": "9654638745",
+        "emailId": "Sunder@gmail.com"
     }
 }
