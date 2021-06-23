@@ -32,5 +32,16 @@
         "zipCode": "413101",
         "phoneNumber": "9654638745",
         "emailId": "Sunder@gmail.com"
+    },
+    "NewAddressBookInvalidInfo":
+    {
+        "firstName": "Sai",
+        "lastName": "Sunder",
+        "address": "SaiNiwas",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "zipCode": "413101",
+        "phoneNumber": "9654638",
+        "emailId": "Sunder@gmail.com"
     }
 }

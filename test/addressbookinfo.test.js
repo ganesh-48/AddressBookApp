@@ -79,8 +79,11 @@ beforeEach(done => {
         });
 });
 
+//let invalidtoken = jw.slice(10);
+//let wrongToken = "";
+
 describe('POST/add', () => {
-    it('givenAddNewAddressBookInfo_WhenAdded_shouldReturnStatus=200AndSuccess=true', (done) => {
+    it('givenAddNewAddressBookInfoCheckingByToken_WhenAdded_shouldReturnStatus=200AndSuccess=true', (done) => {
         const userInfo = addressBookInfo.NewAddressBookInfo;
         chai.request(server)
             .post('/add')
@@ -90,6 +93,20 @@ describe('POST/add', () => {
                 res.should.have.status(200);
                 res.body.should.have.property('success').eq(true)
                 res.body.should.have.property('message').eq('Data is added successfully in address book info...')
+            done();
+            });
+    });
+
+    it('givenInvalidAddNewAddressBookInfoCheckingByToken_WhenAdded_shouldReturnStatus=400AndSuccess=false', (done) => {
+        const userInfo = addressBookInfo.NewAddressBookInvalidInfo;
+        chai.request(server)
+            .post('/add')
+            .send(addressBookInfo.NewAddressBookInvalidInfo)
+            .set('Authorization', + token )
+            .end((error, res) => {
+                res.should.have.status(400);
+                res.body.should.have.property('success').eq(false)
+                res.body.should.have.property('message')
             done();
             });
     });
