@@ -203,7 +203,7 @@ describe("/PUT /update/addressBookInfo/Id", () => {
 
 describe("/delete/addressBookInfo/Id", () => {
 
-    it("givenValidTokenAndEmployeeData_whenDeleteUsingId_shouldReturnStatus=200AndSuccess=true", done => {
+    it("givenValidTokenAndAddressBookInfo_whenDeleteUsingId_shouldReturnStatus=200AndSuccess=true", done => {
         chai
             .request(server)
             .delete("/delete/addressBookInfo/" + addressBookInfo.AddressBookInfoId.Id)
