@@ -1,0 +1,282 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Address Book Info",
+        "description": "Address Book Registration",
+        "version": "1.0.0"
+    },
+    "host": "localhost:7000",
+    "basePath": "/",
+    "tags": [],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [],
+    "produces": [],
+    "paths": {
+        "/add": {
+            "post": {
+                "tags": [],
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AddressBookInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/getalladdressBookInfo": {
+            "get": {
+                "tags": [],
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "APIKEY": []
+                    }
+                ]
+            }
+        },
+        "/findaddressBookInfo/{addressBookInfoId}": {
+            "get": {
+                "tags": [],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "addressBookInfoId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description":"successfull"
+                      },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "APIKEY": []
+                    }
+                ]
+            }
+        },
+        "/update/addressBookInfo/{addressBookInfoId}": {
+            "put": {
+                "tags": [],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "addressBookInfoId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "newData",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AddressBookInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "APIKEY": []
+                    }
+                ]
+            }
+        },
+        "/delete/addressBookInfo/{addressBookInfoId}": {
+            "delete": {
+                "tags": [],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "addressBookInfoId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "APIKEY": []
+                    }
+                ]
+            }
+        },
+        "/add/userinfo": {
+            "post": {
+              "description": "",
+              "parameters": [
+                {
+                  "name": "create newUser",
+                  "in": "body",
+                  "required": true,
+                  "schema": {
+                      "$ref": "#/definitions/User"
+                  }
+                }
+              ],
+              "responses": {
+                "201": {
+                  "description": "Created"
+                },
+                "400": {
+                  "description": "Bad Request"
+                },
+                "500": {
+                  "description": "Internal Server Error"
+                }
+              }
+            }
+          },
+        "/userlogin": {
+            "post": {
+                "tags": [],
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "APIKEY": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "AddressBookInfo": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "address": {
+                    "type":"string"
+                },
+                "city": {
+                    "type":"string"
+                },
+                "state": {
+                    "type":"string"
+                },
+                "zipCode": {
+                    "type":"number"
+                },
+                "phoneNumber": {
+                    "type":"number"
+                },
+                "emailId": {
+                    "type": "string"
+                }
+            }
+        },
+        "User": {
+            "type": "object",
+            "properties": {
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "emailId": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            }
+        },
+        "Login": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
