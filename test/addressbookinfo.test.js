@@ -137,4 +137,18 @@ describe("/GET /getalladdressBookInfo", () => {
                 done();
             });
     });
+
+    it("givenInvalidAddNewAddressBookInfoCheckingByToken_WhenGetAllTheAddressBookInfo_shouldReturnStatus=401AndSuccess=false", done => {
+        var emptyToken = '';
+        chai
+            .request(server)
+            .get("/getalladdressBookInfo")
+            .set('Authorization', emptyToken)
+            .end((error, res) => {
+                res.should.have.status(401);
+                res.body.should.have.property('success').eq(false);
+                res.body.should.have.property('message').eq("Access denied! unauthorized user")
+                done();
+            });
+    });
 });
