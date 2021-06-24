@@ -38,7 +38,12 @@
                     "500": {
                         "description": "Internal Server Error"
                     }
-                }
+                },
+                "security": [
+                    {
+                      "JWT": []
+                    }
+                  ]
             }
         },
         "/getalladdressBookInfo": {
@@ -59,7 +64,7 @@
                 },
                 "security": [
                     {
-                        "APIKEY": []
+                        "JWT": []
                     }
                 ]
             }
@@ -92,7 +97,7 @@
                 },
                 "security": [
                     {
-                        "APIKEY": []
+                        "JWT": []
                     }
                 ]
             }
@@ -130,7 +135,7 @@
                 },
                 "security": [
                     {
-                        "APIKEY": []
+                        "JWT": []
                     }
                 ]
             }
@@ -160,7 +165,7 @@
                 },
                 "security": [
                     {
-                        "APIKEY": []
+                        "JWT": []
                     }
                 ]
             }
@@ -214,7 +219,7 @@
         }
     },
     "securityDefinitions": {
-        "APIKEY": {
+        "JWT": {
             "type": "apiKey",
             "name": "Authorization",
             "in": "header"
