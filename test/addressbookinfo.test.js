@@ -199,6 +199,20 @@ describe("/PUT /update/addressBookInfo/Id", () => {
             done();
             });
     });
+
+    it("givenValidTokenAndFindAddressBookInfoById_whenUpdateUsingInvalidId_shouldReturnStatus=404AndSuccess=false", done => {
+        chai
+            .request(server)
+            .put("/update/addressBookInfo/" + addressBookInfo.AddressBookInfoInvalidId.Id)
+            .send(addressBookInfo.UpdateAddressBookInvalidInfo)
+            .set('Authorization', 'bearar ' + token)
+            .end((error, res) => {
+                res.should.have.status(404);
+                res.body.should.have.property('success').eq(false)
+                res.body.should.have.property('message').eq("Some error is occurred when update the address book info by Id")
+            done();
+            });
+    });
 });
 
 describe("/delete/addressBookInfo/Id", () => {
