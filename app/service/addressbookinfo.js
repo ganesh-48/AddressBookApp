@@ -1,4 +1,5 @@
 const addressBookInfoModel = require('../models/addressbookinfo.js');
+const logger = require('../../config/logger.js');
 
 class AddressBookInfoService {
 
@@ -28,6 +29,7 @@ class AddressBookInfoService {
      */
     findaddressBookInfoId = (addressBookInfoId, callBack) => {
         addressBookInfoModel.findaddressBookInfoId(addressBookInfoId, (error, data) => {
+            logger.info("service->", data);
             return (error) ? callBack(error, null) : callBack(null, data);
         })
     }
@@ -39,6 +41,7 @@ class AddressBookInfoService {
    */
     findAddressBookInfoIdAndUpdate = (newAddressBookInfo, addressBookInfoId, callBack) => {
         addressBookInfoModel.findAddressBookInfoIdAndUpdate(newAddressBookInfo, addressBookInfoId, (error, data) => {
+            logger.info("service->", data);
             return (error) ? callBack(error, null) : callBack(null, data);
         })
     }

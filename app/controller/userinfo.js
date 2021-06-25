@@ -1,6 +1,7 @@
 const userInfoService = require('../service/userinfo.js');
 const data = require('../middleware/validation.js'); 
 const userValidation = require('../middleware/userValidation.js');
+const logger = require('../../config/logger.js')
 
 class UserInfo {
     create = (req, res) => {
@@ -19,7 +20,8 @@ class UserInfo {
             if(error) {
                 return res.status(500).send ({
                     success: false,
-                    message: "Some error is occured at time creatindg data"
+                    message: "Some error is occured at time creatindg data",
+                    error: error.message
                 })
             }
             res.status(200).send ({
@@ -52,7 +54,8 @@ class UserInfo {
         }).catch((error) => {
             res.status(404).send({
                 success: false,
-                message: "Login details wrong"
+                message: "Login details wrong",
+                error: error.message
             });
         });
     }

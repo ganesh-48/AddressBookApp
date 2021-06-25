@@ -1,5 +1,6 @@
 const addressBookInfoService = require('../service/addressbookinfo.js');
 const  validator = require('../middleware/validation.js');
+const logger = require('../../config/logger.js')
 
 class AddressBookInfo {
 
@@ -24,7 +25,8 @@ class AddressBookInfo {
             if (error) {
                 return res.status(500).send({
                     success: false,
-                    message: "Some error is occurred when creating address book info"
+                    message: "Some error is occurred when creating address book info",
+                    error: error.message
                 })
             }
             res.status(200).send({

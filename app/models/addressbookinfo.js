@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const logger = require('../../config/logger.js');
 
 const AddressBookInfoSchema = new mongoose.Schema({
     firstName: {
@@ -104,6 +105,7 @@ class AddressBookInfoModel {
             phoneNumber: newAddressBookInfo.phoneNumber,
             emailId: newAddressBookInfo.emailId
         }, {new: true}, (error, data) => {
+            logger.info("model-> ", data);
             return (error) ? callBack(error, null) : callBack(null, data);
         })
     }
