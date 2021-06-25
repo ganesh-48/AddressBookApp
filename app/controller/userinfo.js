@@ -31,6 +31,34 @@ class UserInfo {
     }
 
     login = (req, res) => {
+        /*let userLoginInfo = req.body;
+        var userLoginInfoValidation = userValidation.joiuserInfo.validate(userLoginInfo);
+        if(userLoginInfoValidation.error) {
+            console.log(result);
+            return res.status(400).send({
+                success: false,
+                message: userLoginInfoValidation.error.details[0].message
+            });
+        }*/
+
+       let userLoginInfo = userValidation.joiuserInfo.validate(req.body);
+        userInfoService.checkLogin(userLoginInfo.value).then((userData) => {
+            console.log(userLoginInfo.value);
+            res.send({
+                success: true,
+                message: "User Login Successfull..",
+                token: userData
+            });
+        }).catch((error) => {
+            res.status(404).send({
+                success: false,
+                message: "Login details wrong"
+            });
+        });
+    }
+
+    /*
+    login = (req, res) => {
 
         let userLoginInfo = req.body;
         var userLoginInfoValidation = userValidation.joiuserInfo.validate(userLoginInfo);
@@ -55,7 +83,7 @@ class UserInfo {
                 token:  userData
             })
         })
-    }
+    }*/
 
 }
 
