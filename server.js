@@ -28,6 +28,6 @@ app.get('/', (req, res) => {
 require('./app/routes/addressbookinfo.js')(app);
 
 // listen for requests
-module.exports=app.listen(7000, () => {
-    logger.info("Server is listening on port 7000");
-});
+module.exports =
+    app.listen(process.env.PORT, () =>
+        logger.info("Server is listening on port " + process.env.PORT));
