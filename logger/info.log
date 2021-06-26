@@ -162,3 +162,80 @@
 {"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:02:01.892Z"}
 {"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:06:58.837Z"}
 {"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:07:15.628Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:07:22.886Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:26:58.547Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:27:14.365Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:27:40.327Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:28:28.319Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:28:38.232Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:29:54.118Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T08:30:06.114Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T09:15:37.633Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:15:40.903Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:15:41.042Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T09:15:41.224Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:15:41.224Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T09:15:41.361Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:15:41.361Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T09:17:43.362Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:17:46.197Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:17:46.357Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T09:17:46.528Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:17:46.528Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T09:17:46.675Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T09:17:46.675Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T10:58:01.608Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T10:58:05.793Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T10:58:05.998Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T10:58:06.787Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T10:58:06.788Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T10:58:06.995Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T10:58:06.995Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T11:01:02.448Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T11:01:06.641Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T11:01:06.783Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T11:01:06.944Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T11:01:06.944Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-25T11:01:07.085Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-25T11:01:07.086Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T16:54:37.026Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T17:01:06.128Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T17:02:41.942Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T17:05:45.349Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-25T17:14:56.856Z"}
+{"message":"Server is listening on port 7000","level":"error","timestamp":"2021-06-26T03:03:21.275Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:06:06.941Z"}
+{"message":"Server is listening on port 7000","level":"error","timestamp":"2021-06-26T03:06:06.942Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:11:41.748Z"}
+{"message":"Server is listening on port 7000","level":"error","timestamp":"2021-06-26T03:11:41.750Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:24:38.505Z"}
+{"message":"Server is listening on port 7000","level":"error","timestamp":"2021-06-26T03:24:38.506Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:27:48.111Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:32:10.854Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:32:44.604Z"}
+{"level":"error","message":"user login error","timestamp":"2021-06-26T03:32:46.492Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:32:47.479Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:32:47.611Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-26T03:32:47.835Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:32:47.836Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-26T03:32:47.992Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:32:47.993Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:37:08.050Z"}
+{"level":"error","message":"user login error","timestamp":"2021-06-26T03:37:09.298Z"}
+{"level":"error","message":"Some details are missing","timestamp":"2021-06-26T03:37:09.443Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:37:10.145Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:37:10.279Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-26T03:37:10.426Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:37:10.426Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-26T03:37:10.564Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:37:10.564Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:37:35.340Z"}
+{"message":"Server is listening on port 7000","level":"info","timestamp":"2021-06-26T03:38:13.235Z"}
+{"level":"error","message":"user login error","timestamp":"2021-06-26T03:38:14.417Z"}
+{"level":"error","message":"Some details are missing","timestamp":"2021-06-26T03:38:14.560Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:38:15.256Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:38:15.387Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-26T03:38:15.531Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:38:15.532Z"}
+{"level":"info","message":"model-> ","timestamp":"2021-06-26T03:38:15.664Z"}
+{"level":"info","message":"service->","timestamp":"2021-06-26T03:38:15.664Z"}

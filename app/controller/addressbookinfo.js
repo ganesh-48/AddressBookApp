@@ -21,7 +21,7 @@ class AddressBookInfo {
 
         let newAddressBookInfo = req.body;
         addressBookInfoService.create(newAddressBookInfo, (error, data) => {
-            console.log(newAddressBookInfo);
+            logger.error("Some details are missing", error);
             if (error) {
                 return res.status(500).send({
                     success: false,

@@ -29,5 +29,6 @@ require('./app/routes/addressbookinfo.js')(app);
 
 // listen for requests
 module.exports =
-    app.listen(process.env.PORT, () =>
+    app.listen(process.env.PORT, () => 
         logger.info("Server is listening on port " + process.env.PORT));
+    

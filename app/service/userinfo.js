@@ -18,16 +18,14 @@ class UserInfoService {
         return new Promise((resolve, reject) => {
             userInfoModel.checkLogin(userLoginInfo, (error, userData) => {
                 if (error) {
-                    reject(error) 
-                    return;
+                    return reject(error); 
+                   
                 }
                 
                 let userResult = bcrypt.compareSync(userLoginInfo.password, userData.password);
                 if (userResult) {
-                    const jsontoken = sign({ userResult: userData }, process.env.jwt, { expiresIn: "1h" });
-                    console.log(jsontoken);
-                    resolve(jsontoken)
-                    return;
+                    const jsontoken = sign({ userResult: userData }, process.env.jwt, { expiresIn: "2h" });
+                    return resolve(jsontoken);
                 }
                 return reject("Invalid userlogindata");
             });
